@@ -1,0 +1,50 @@
+<div class="container" *ngFor="let p of movieArray">
+  <div *ngIf="p.id==name">
+    <section class="form my-4 mx-5">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-lg-5">
+            <img src="{{p.image}}" class="img-fluid ml-0" alt="">
+          </div>
+          <div class="col-lg-7">
+            <b><h1 class="font-weight-bold">Book</h1></b>
+            <h1>To Enjoy The Movie</h1>
+            <form #myForm="ngForm" (ngSubmit)="adduserdata(myForm,p.id)">
+                <span class="cols-6">
+                <label for="un">Name</label>
+                <input type="text" name="username" id="un" class="form-control" [(ngModel)]="userobj.username">
+              </span>
+              <span class="cols-6">
+                <label for="un">DATE</label>
+                <input type="date" name="date" id="un" class="form-control" [(ngModel)]="userobj.date">
+              </span>
+                <div>
+                  <label for="time">Choose Show-Time:</label>
+                  <select class="form-control" name="showtime" id="um" [(ngModel)]="userobj.showtime">
+                    <option>Morning</option>
+                    <option>afternoon</option>
+                    <option>1st-show</option>
+                    <option>2nd-show</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="em">NO OF SEATS</label>
+                  <input type="number" name="noofseats" id="um" class="form-control" [(ngModel)]="userobj.noofseats">
+                </div>
+                <div>
+                  <label for="em">Phone Number</label>
+                  <input type="tel" name="number" id="Phone" class="form-control" [(ngModel)]="userobj.number">
+                </div>
+    
+                <button type="submit" class="btn1 mt-3 mb-5" (click)="onsubmit()"  data-bs-toggle="modal"><i class="bi bi-bookmark-heart-fill"></i>Book Now</button>
+    
+    
+              </form>
+              <h4> Available Tickets : {{movie.noofseatavailable}}</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+

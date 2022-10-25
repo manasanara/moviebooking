@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="text">
+    <div class="image">
+      <div>
+        <h1><b>BOOK YOUR MOVIE</b></h1>
+      </div>
+      <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8_36TRjUcwmUC1Qn5oO0Ea-pBlLCfz_Oo0A&usqp=CAU" alt="">
+      </div>
+    </div>
+    </div>
+</div>
+<div class="container-fluid ">
+    <div class="row main-row ">
+        <div class="col-4 mb-5 mt-10" *ngFor="let p of triller">
+          <!-- d-flex align-items-stretch -->
+            <div class="card mx-auto mb-20" style="width: 18rem; margin-bottom: 20px;">
+                <img class="card-img-top"  id="image" src="{{p.image}}" alt="Card image cap">
+                <div class="card-img-top shadow bg-white rounded">
+                  <div class="card-body">
+                    <h5 class="card-title"><b>{{p.name}}</b></h5>
+                    <p class="card-text">{{p.description}}</p>
+                    <button type="button" class="btn1 mt-3 mb-5" (click)="getmovie(p.id)"><span><i class="bi bi-bookmark-heart-fill"></i>Book</span></button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

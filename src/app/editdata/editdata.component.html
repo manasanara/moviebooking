@@ -1,0 +1,37 @@
+<h1>Edit User Details</h1>
+<form [formGroup]="userdata">
+<mat-form-field appearance="fill">
+    <mat-label>username</mat-label>
+    <input formControlName="username" matInput placeholder="Placeholder" >
+  </mat-form-field>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+  <mat-form-field appearance="fill">
+    <mat-label>No of Seats</mat-label>
+    <input matInput formControlName="noofseats" type="number" placeholder="NO of seats">
+   
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Show-Time</mat-label>
+    <select formControlName="showtime" matNativeControl required>
+      <option value="10:00">10:00</option>
+      <option value="11:30">11:30</option>
+      <option value="02:30">02:30</option>
+      <option value="06:00">06:00</option>
+    </select>
+  </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone number</mat-label>
+        <input formControlName="number" matInput  placeholder="Ph number">
+      </mat-form-field>
+      <div mat-dailog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dailog-close>Close</button>
+        <button style="margin-left:18px;" mat-raised-button color="primary" (click)="updatedata()">Update</button>
+      </div>
+      </form>
